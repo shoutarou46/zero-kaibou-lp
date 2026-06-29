@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>触診解剖学 リアル講座 上半身 | なんとなくを根拠に変える解剖学</title>
+  <meta name="description" content="触診解剖学リアル講座 上半身 - 骨・筋肉・動きのつながりがわかれば、あなたのアプローチはもっと変わる。東京・名古屋・大阪で開催。各回10名限定。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: #1a1a4e;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: linear-gradient(180deg, #fff 0%, #fce4ec 15%, #fce4ec 100%);
+      padding: 40px 24px 48px;
+      text-align: center;
+    }
+
+    .cta-limit {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(36px, 9vw, 72px);
+      color: #e8215a;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .cta-limit .slash {
+      font-size: 0.6em;
+      color: #e8215a;
+      font-weight: 900;
+    }
+
+    .cta-subtitle {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(20px, 5vw, 32px);
+      color: #1a1a4e;
+      margin-top: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .cta-subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #ffd966;
+      border-radius: 3px;
+    }
+
+    .cta-label {
+      font-size: clamp(14px, 3.5vw, 20px);
+      color: #e8215a;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .btn-city {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 60px;
+      padding: 20px 48px 20px 24px;
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 7vw, 52px);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .btn-city:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .btn-city .arrow {
+      position: absolute;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .btn-tokyo {
+      background: linear-gradient(90deg, #f03e7e, #e8215a);
+    }
+
+    .btn-nagoya {
+      background: linear-gradient(90deg, #9b72d4, #7c5cb8);
+    }
+
+    .btn-osaka {
+      background: linear-gradient(90deg, #f03e7e, #e8215a);
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      background: #fce4ec;
+      padding: 40px 0 60px;
+    }
+
+    .section-ribbon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding: 0 24px;
+    }
+
+    .ribbon-badge {
+      background: #e8215a;
+      color: #fff;
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(18px, 5vw, 28px);
+      padding: 10px 32px;
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+      letter-spacing: 0.1em;
+    }
+
+    .ribbon-deco {
+      font-size: 24px;
+      color: #e8215a;
+    }
+
+    .testimonial-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonial-card.reverse {
+      direction: rtl;
+    }
+
+    .testimonial-card.reverse > * {
+      direction: ltr;
+    }
+
+    .testimonial-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .testimonial-text {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .testimonial-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .check-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2.5px solid #e8215a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .check-circle.purple {
+      border-color: #8b7ec8;
+    }
+
+    .check-icon {
+      font-size: 14px;
+      color: #e8215a;
+      font-weight: 900;
+    }
+
+    .check-icon.purple {
+      color: #8b7ec8;
+    }
+
+    .testimonial-headline {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(14px, 2.5vw, 18px);
+      color: #e8215a;
+      line-height: 1.5;
+      position: relative;
+      display: inline;
+    }
+
+    .testimonial-headline.purple {
+      color: #8b7ec8;
+    }
+
+    .underwave {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: currentColor;
+    }
+
+    .testimonial-body {
+      font-size: clamp(11px, 1.8vw, 13px);
+      color: #333;
+      line-height: 1.7;
+      margin-top: 8px;
+      font-weight: 400;
+    }
+
+    /* ========== PAIN POINTS ========== */
+    .pain-section {
+      background: linear-gradient(180deg, #f8f4ff 0%, #fff 60%);
+      padding: 48px 24px;
+    }
+
+    .pain-intro {
+      max-width: 800px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .pain-trainer-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto 16px;
+      justify-content: center;
+    }
+
+    .pain-trainer-text {
+      flex: 1;
+    }
+
+    .pain-title-text {
+      font-size: clamp(16px, 3.5vw, 22px);
+      color: #1a1a4e;
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .pain-bubble {
+      max-width: 800px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .bubble-inner {
+      display: inline-block;
+      background: linear-gradient(135deg, #f472b6, #e8215a);
+      color: #fff;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: clamp(13px, 2.5vw, 16px);
+      line-height: 1.5;
+      text-align: center;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    .pain-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pain-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .pain-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .pain-card-label {
+      padding: 12px 16px;
+      font-weight: 900;
+      font-size: clamp(14px, 2.5vw, 17px);
+      color: #1a1a4e;
+      line-height: 1.4;
+    }
+
+    .pain-card-label .hl {
+      color: #8b7ec8;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: #ffd966;
+      -webkit-text-decoration-color: #ffd966;
+    }
+
+    .pain-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    /* ========== NANTONA SECTION ========== */
+    .nantona-section {
+      background: linear-gradient(135deg, #f3e8ff 0%, #fce4ec 60%, #fff 100%);
+      padding: 48px 24px;
+    }
+
+    .nantona-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .nantona-header-text {
+      font-size: clamp(18px, 4vw, 26px);
+      font-weight: 900;
+      color: #1a1a4e;
+      line-height: 1.5;
+    }
+
+    .nantona-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto 32px;
+    }
+
+    .nantona-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+
+    .nantona-check {
+      width: 28px;
+      height: 28px;
+      background: #ede9fe;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+      color: #8b7ec8;
+      font-weight: 900;
+    }
+
+    .nantona-cause {
+      font-size: clamp(13px, 2.5vw, 16px);
+      color: #333;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .nantona-cause .bold {
+      font-weight: 900;
+      color: #1a1a4e;
+    }
+
+    .nantona-arrow {
+      color: #8b7ec8;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .nantona-result {
+      font-size: clamp(14px, 2.8vw, 18px);
+      font-weight: 900;
+      color: #e8215a;
+      flex: 1;
+      text-align: center;
+    }
+
+    .nantona-figure {
+      font-size: 28px;
+      opacity: 0.6;
+    }
+
+    .nantona-note {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #f3f0ff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .skeleton-icon {
+      font-size: 48px;
+      flex-shrink: 0;
+    }
+
+    .nantona-note-text {
+      font-size: clamp(14px, 2.5vw, 16px);
+      color: #555;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .heart-deco {
+      color: #e8215a;
+      font-size: 20px;
+    }
+
+    /* ========== SOLUTION SECTION ========== */
+    .solution-section {
+      padding: 48px 24px;
+      background: linear-gradient(180deg, #fce4ec 0%, #f3e8ff 100%);
+    }
+
+    .solution-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .solution-ribbon {
+      display: inline-block;
+      background: #e8215a;
+      color: #fff;
+      font-weight: 900;
+      font-size: clamp(14px, 3vw, 18px);
+      padding: 6px 20px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .solution-body {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, #f8f4ff, #fff);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(139,126,200,0.15);
+    }
+
+    .solution-text-wrap {
+
+    }
+
+    .solution-big {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-size: clamp(16px, 3.5vw, 22px);
+      color: #1a1a4e;
+      font-weight: 900;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .solution-big .hl {
+      color: #e8215a;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: #ffd966;
+      -webkit-text-decoration-color: #ffd966;
+    }
+
+    .solution-impact {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-size: clamp(22px, 5vw, 36px);
+      font-weight: 900;
+      color: #e8215a;
+      line-height: 1.3;
+    }
+
+    .anatomy-visual {
+      display: flex;
+      gap: 12px;
+    }
+
+    .anatomy-item {
+      text-align: center;
+    }
+
+    .anatomy-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #d4c5f7;
+      margin: 0 auto 6px;
+      background: #f3e8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .anatomy-label {
+      font-size: 12px;
+      color: #8b7ec8;
+      font-weight: 700;
+      background: #f3e8ff;
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    /* ========== BENEFITS ========== */
+    .benefits-section {
+      padding: 48px 24px;
+      background: #fff;
+    }
+
+    .benefits-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .benefits-title {
+      font-size: clamp(18px, 4vw, 26px);
+      color: #1a1a4e;
+      font-weight: 900;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .benefits-subtitle {
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: 900;
+      color: #e8215a;
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f8f4ff;
+      border-radius: 12px;
+      padding: 14px 20px;
+    }
+
+    .benefit-check {
+      color: #8b7ec8;
+      font-size: 20px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .benefit-text {
+      font-size: clamp(14px, 2.5vw, 16px);
+      color: #1a1a4e;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .benefit-text .bold {
+      font-weight: 900;
+    }
+
+    .benefits-impact-box {
+      background: linear-gradient(135deg, #8b7ec8, #6b55a8);
+      border-radius: 20px;
+      padding: 28px 24px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .benefits-impact-text {
+      font-size: clamp(16px, 3.5vw, 22px);
+      font-weight: 900;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .benefits-impact-big {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-size: clamp(24px, 5.5vw, 38px);
+      font-weight: 900;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    .sparkle-1 { top: 12px; right: 20px; }
+    .sparkle-2 { bottom: 16px; left: 16px; }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      background: linear-gradient(180deg, #fce4ec 0%, #fff 100%);
+      padding: 48px 24px 60px;
+      text-align: center;
+    }
+
+    .final-cta .cta-limit {
+      margin-bottom: 8px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      .testimonial-card {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card.reverse {
+        direction: ltr;
+      }
+
+      .testimonial-photo {
+        height: 200px;
+      }
+
+      .pain-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pain-card-wide {
+        grid-column: auto;
+      }
+
+      .solution-body {
+        grid-template-columns: 1fr;
+      }
+
+      .anatomy-visual {
+        justify-content: center;
+      }
+
+      .nantona-item {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .nantona-figure {
+        display: none;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 768px) {
+      .testimonial-photo {
+        height: 200px;
+      }
+    }
+
+    /* ========== DIVIDER ========== */
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #e8215a, #8b7ec8);
+      border-radius: 2px;
+      margin: 0 auto 32px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <div class="hero">
+    <img src="images/course-shokuki.png" alt="触診解剖学 リアル講座 上半身 - なんとなくを根拠に変える解剖学">
+  </div>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="cta-limit">
+      <span class="slash">＼</span>
+      各回<span style="font-size:1.2em;">10</span>名限定
+      <span class="slash">／</span>
+    </div>
+    <div style="margin-top: 16px;">
+      <span class="cta-subtitle">少人数だからしっかり学べる！</span>
+    </div>
+    <p class="cta-label">お申し込みはこちら</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-city btn-tokyo">
+        東 京
+        <span class="arrow">›</span>
+      </a>
+      <a href="#" class="btn-city btn-nagoya">
+        名 古 屋
+        <span class="arrow">›</span>
+      </a>
+      <a href="#" class="btn-city btn-osaka">
+        大 阪
+        <span class="arrow">›</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials">
+    <div class="section-ribbon">
+      <span class="ribbon-deco">✦ ✦</span>
+      <div class="ribbon-badge">参加者の声</div>
+      <span class="ribbon-deco">✦ ✦</span>
+    </div>
+
+    <div class="testimonial-cards">
+
+      <!-- Card 1: text left, photo right -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          <div class="testimonial-check">
+            <div class="check-circle">
+              <span class="check-icon">✓</span>
+            </div>
+            <div>
+              <span class="testimonial-headline">今までは経験や感覚で施術をしている部分もありましたが、<br>この講座を受けてからは<span class="underwave">体を見る基準が明確になりました。</span></span>
+            </div>
+          </div>
+          <p class="testimonial-body">特に筋肉の付着部や関節の動きを理解できたことで、なぜその症状が出ているのかを考えられるようになりました。解剖学を学び直したい方には本当に<strong>おすすめ</strong>です！</p>
+        </div>
+        <img class="testimonial-photo" src="images/canva_img_23.jpg" alt="セミナー参加者">
+      </div>
+
+      <!-- Card 2: photo left, text right -->
+      <div class="testimonial-card reverse">
+        <div class="testimonial-text">
+          <div class="testimonial-check">
+            <div class="check-circle purple">
+              <span class="check-icon purple">✓</span>
+            </div>
+            <div>
+              <span class="testimonial-headline purple">解剖学が苦手で、本や参考書を見てもなかなか理解できませんでした。ですが実際に骨や筋肉の位置を確認しながら学べたことで、<span class="underwave">「そういうことだったのか！」</span></span>
+            </div>
+          </div>
+          <p class="testimonial-body">という発見がたくさんありました。</p>
+        </div>
+        <img class="testimonial-photo" src="images/canva_img_6.jpg" alt="セミナー参加者">
+      </div>
+
+      <!-- Card 3: text left, photo right -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          <div class="testimonial-check">
+            <div class="check-circle">
+              <span class="check-icon">✓</span>
+            </div>
+            <div>
+              <span class="testimonial-headline">解剖学は難しいイメージがありましたが、丁寧に教えてもらえたので<span class="underwave">安心して学ぶことができました。</span></span>
+            </div>
+          </div>
+          <p class="testimonial-body">分からないことも質問しやすい雰囲気で、一人で勉強していた時よりも圧倒的に理解が深まりました！</p>
+        </div>
+        <img class="testimonial-photo" src="images/canva_img_23.jpg" alt="セミナー参加者">
+      </div>
+
+      <!-- Card 4: photo left, text right -->
+      <div class="testimonial-card reverse">
+        <div class="testimonial-text">
+          <div class="testimonial-check">
+            <div class="check-circle purple">
+              <span class="check-icon purple">✓</span>
+            </div>
+            <div>
+              <span class="testimonial-headline purple">「なぜその姿勢になるのか」「なぜその動きになるのか」をつながりで学べたので、<span class="underwave">現場での見方が大きく変わりました。</span></span>
+            </div>
+          </div>
+          <p class="testimonial-body">お客様の姿勢や動作を見る時に、以前よりも根拠を持って考えられるようになったと感じています。</p>
+        </div>
+        <img class="testimonial-photo" src="images/canva_img_6.jpg" alt="セミナー参加者">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== PAIN POINTS ========== -->
+  <section class="pain-section">
+    <div class="pain-intro">
+      <p class="pain-title-text">
+        トレーナー、インストラクター、セラピストなど<br>
+        現場で活動していると、<br>
+        <br>
+        目の前のお客様や患者さんから、<br>
+        さまざまな<strong style="color:#8b7ec8;">悩みを相談</strong>されると思います。
+      </p>
+
+      <div class="bubble-inner" style="display:flex; flex-direction:column; margin:0 auto 32px; background: linear-gradient(135deg, #f472b6, #e8215a); color:#fff; border-radius:50%; width:180px; height:180px; align-items:center; justify-content:center; font-weight:900; font-size:15px; line-height:1.6; text-align:center; padding:20px;">
+        あなたも<br>こんな相談を<br>受けたことは<br>ありませんか?
+      </div>
+    </div>
+
+    <div class="pain-cards-grid">
+      <div class="pain-card">
+        <img src="images/canva_img_13.png" alt="肩こり">
+        <div class="pain-card-label">「<span class="hl">肩こり</span>がつらい」</div>
+      </div>
+      <div class="pain-card">
+        <img src="images/canva_img_24.jpg" alt="腰の痛み">
+        <div class="pain-card-label">「<span class="hl">腰</span>が痛い」</div>
+      </div>
+      <div class="pain-card pain-card-wide">
+        <img src="images/canva_img_14.png" alt="太もも・お尻" style="height:180px; width:100%; object-fit:cover;">
+        <div class="pain-card-label">「<span class="hl">太ももやお尻</span>を引き締めたい」</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INFOGRAPHIC SECTIONS ========== -->
+  <section style="background:#f8f4ff; padding:0;">
+    <img src="images/canva_img_15.png" alt="解剖学でアプローチが変わる" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  </section>
+  <section style="background:#fff5f8; padding:0;">
+    <img src="images/canva_img_16.png" alt="腰痛の場合も同じ" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  </section>
+  <section style="background:#f3e8ff; padding:0;">
+    <img src="images/canva_img_17.png" alt="解剖学は土台" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  </section>
+
+  <!-- ========== NANTONA SECTION ========== -->
+  <section class="nantona-section">
+    <div class="nantona-header">
+      <p class="nantona-header-text">
+        解剖学は、<br>
+        <span style="font-size:1.1em; color:#e8215a; text-decoration:underline; text-decoration-color:#ffd966;">難しい言葉を覚えるためのもの</span><br>
+        ではありません。
+      </p>
+    </div>
+
+    <div class="nantona-items">
+      <div class="nantona-item">
+        <div class="nantona-check">✓</div>
+        <div class="nantona-cause">なんとなく<span class="bold">硬そう</span>だから</div>
+        <div class="nantona-arrow">▶</div>
+        <div class="nantona-result">ストレッチ<br>をする</div>
+        <div class="nantona-figure">🧘</div>
+      </div>
+      <div class="nantona-item">
+        <div class="nantona-check">✓</div>
+        <div class="nantona-cause">なんとなく<span class="bold">弱そう</span>だから</div>
+        <div class="nantona-arrow">▶</div>
+        <div class="nantona-result">筋トレ<br>をする</div>
+        <div class="nantona-figure">🏋️</div>
+      </div>
+      <div class="nantona-item">
+        <div class="nantona-check">✓</div>
+        <div class="nantona-cause">なんとなく<span class="bold">姿勢が悪い</span>から</div>
+        <div class="nantona-arrow">▶</div>
+        <div class="nantona-result">整える</div>
+        <div class="nantona-figure">💆</div>
+      </div>
+    </div>
+
+    <div class="nantona-note">
+      <div class="skeleton-icon">💀</div>
+      <p class="nantona-note-text">
+        もちろん、経験や感覚も大切です。<span class="heart-deco">♡</span><br>
+        <br>
+        しかし、そこに<br>
+        <strong>骨や筋肉の基礎解剖学の理解</strong>があるかどうかで、<br>
+        体の見え方は大きく変わります。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SOLUTION ========== -->
+  <section class="solution-section">
+    <div class="solution-inner">
+      <span class="solution-ribbon">しかし、そこに</span>
+
+      <div class="solution-body">
+        <div class="solution-text-wrap">
+          <p class="solution-big">
+            骨や筋肉の<br>
+            <span class="hl">基礎解剖学の理解</span><br>
+            があるかどうかで、
+          </p>
+          <p class="solution-impact">体の見え方は<br>大きく変わります。</p>
+        </div>
+        <div class="anatomy-visual">
+          <div class="anatomy-item">
+            <div class="anatomy-circle" style="background:#f5ece0;">
+              <img src="images/canva_img_20.jpg" alt="腸腰筋" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <div class="anatomy-label">腸腰筋</div>
+          </div>
+          <div class="anatomy-item">
+            <div class="anatomy-circle" style="background:#fbeaea;">
+              <img src="images/canva_img_22.jpg" alt="背筋" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <div class="anatomy-label">背筋</div>
+          </div>
+          <div class="anatomy-item">
+            <div class="anatomy-circle" style="background:#eaf0fb;">
+              <img src="images/canva_img_19.png" alt="ハムストリングス" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <div class="anatomy-label">ハムストリングス</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; background:#fff; border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+        <p style="font-size:clamp(14px,2.8vw,18px); color:#333; font-weight:700; line-height:1.8;">
+          それがわかると、<br>
+          <span style="color:#e8215a; font-weight:900;">ストレッチの意味</span>も、<br>
+          <span style="color:#e8215a; font-weight:900;">筋トレのアプローチ</span>も、<br>
+          <span style="color:#e8215a; font-weight:900;">姿勢の整え方</span>も、<br>
+          すべてに<strong>根拠</strong>が生まれます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS ========== -->
+  <section class="benefits-section">
+    <div class="benefits-inner">
+      <div class="section-divider"></div>
+      <p class="benefits-title">解剖学の理解は、</p>
+      <p class="benefits-subtitle">あなたの指導や施術の質を<br>大きく変えます！</p>
+
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <span class="benefit-check">✓</span>
+          <p class="benefit-text"><span class="bold">身体を正しく評価</span>できるようになる</p>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-check">✓</span>
+          <p class="benefit-text"><span class="bold">根本原因を見抜き、的確なアプローチ</span>ができる</p>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-check">✓</span>
+          <p class="benefit-text">お客様や患者さんからの<span class="bold">信頼が深まる</span></p>
+        </div>
+      </div>
+
+      <div class="benefits-impact-box">
+        <span class="sparkle sparkle-1">✦</span>
+        <span class="sparkle sparkle-2">✦</span>
+        <p class="benefits-impact-text">解剖学の理解は、<br>あなたの指導や施術の質を</p>
+        <p class="benefits-impact-big">大きく変えます！✦</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="final-cta">
+    <div class="cta-limit">
+      <span class="slash">＼</span>
+      各回<span style="font-size:1.2em;">10</span>名限定
+      <span class="slash">／</span>
+    </div>
+    <div style="margin-top: 16px; margin-bottom: 8px;">
+      <span class="cta-subtitle">少人数だからしっかり学べる！</span>
+    </div>
+    <p class="cta-label">お申し込みはこちら</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-city btn-tokyo">
+        東 京
+        <span class="arrow">›</span>
+      </a>
+      <a href="#" class="btn-city btn-nagoya">
+        名 古 屋
+        <span class="arrow">›</span>
+      </a>
+      <a href="#" class="btn-city btn-osaka">
+        大 阪
+        <span class="arrow">›</span>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
