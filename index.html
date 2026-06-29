@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゼロから学ぶ解剖学</title>
+  <meta name="description" content="ゼロから学ぶ解剖学 - 消化器解剖学コース・セミナー・メンバーシップ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+      color: rgba(51, 51, 51, 0.84);
+      min-height: 100vh;
+    }
+
+    /* 背景グラデーション固定 */
+    .bg-fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      background-image: linear-gradient(135deg, rgba(147, 219, 250, 1), rgba(255, 255, 255, 1));
+    }
+
+    /* ページ全体コンテナ */
+    .page-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 16px 20px 20px;
+    }
+
+    @media (min-width: 768px) {
+      .page-container {
+        padding: 24px 33px 26px;
+      }
+    }
+
+    /* メインコンテンツ */
+    .main-content {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 70px;
+    }
+
+    @media (min-width: 768px) {
+      .main-content {
+        margin-bottom: 100px;
+      }
+    }
+
+    /* ======== プロフィールセクション ======== */
+    .profile-section {
+      position: relative;
+      max-width: 480px;
+      margin: 6px auto 15px;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    @media (min-width: 768px) {
+      .profile-section {
+        margin: 10px auto 20px;
+      }
+    }
+
+    .profile-top {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .profile-top {
+        margin-bottom: 14px;
+      }
+    }
+
+    /* lit.link ロゴ */
+    .litlink-logo {
+      margin-bottom: 14px;
+    }
+
+    .litlink-logo a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 76px;
+      text-decoration: none;
+    }
+
+    .litlink-logo-text {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: rgba(51, 51, 51, 0.5);
+      letter-spacing: 0.02em;
+    }
+
+    /* プロフィールアイコン */
+    .profile-icon-wrapper {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto 10px;
+      height: 88px;
+      width: 88px;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .profile-icon-wrapper {
+        height: 120px;
+        width: 120px;
+        margin-bottom: 14px;
+      }
+    }
+
+    .profile-icon-inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-icon {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* プロフィール名 */
+    .profile-name-wrapper {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .profile-name-wrapper {
+        margin-bottom: 6px;
+      }
+    }
+
+    .profile-name {
+      margin: 0;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    @media (min-width: 768px) {
+      .profile-name {
+        font-size: 2rem;
+      }
+    }
+
+    /* キャプション */
+    .profile-caption {
+      margin: 0;
+      white-space: pre-wrap;
+      text-align: center;
+      letter-spacing: 0.06em;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    /* ======== リンクリスト ======== */
+    .links-list {
+      max-width: 480px;
+      margin: 0 auto;
+      list-style: none;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    .link-item {
+      margin-bottom: 14px;
+    }
+
+    .link-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- フル幅画像カード ---- */
+    .image-card {
+      position: relative;
+      z-index: 1;
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 1);
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+      text-decoration: none;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    .image-card-no-link {
+      cursor: default;
+    }
+
+    .image-card-img-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 30px;
+      width: 100%;
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-card-img {
+      max-width: 100%;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-card-overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .image-card-overlay-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      padding: 10px 10px 5px;
+    }
+
+    .image-card-overlay-relative {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .image-card-text-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 6px;
+      padding: 2px 5px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .image-card-text {
+      margin-top: 3px;
+      word-break: break-all;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+    }
+
+    /* ---- ボタンカード ---- */
+    .button-card {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 1);
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+      color: rgba(51, 51, 51, 0.84);
+      text-decoration: none;
+      text-align: left;
+    }
+
+    .button-card:hover {
+      text-decoration: none;
+      color: rgba(51, 51, 51, 0.84);
+    }
+
+    .button-card-no-link {
+      cursor: default;
+    }
+
+    .button-card-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .button-card-thumb {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .button-card-thumb-img-wrapper {
+      position: relative;
+      margin-right: 12px;
+      height: 40px;
+      width: 40px;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (min-width: 768px) {
+      .button-card-thumb-img-wrapper {
+        height: 56px;
+        width: 56px;
+      }
+    }
+
+    .button-card-thumb-img {
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .button-card-thumb-img {
+        height: 56px;
+        width: 56px;
+      }
+    }
+
+    .button-card-text {
+      flex: 1;
+      padding-top: 3px;
+      min-width: 0;
+    }
+
+    .button-card-title {
+      margin-bottom: 0;
+      word-break: break-all;
+      font-size: 1.2rem;
+      line-height: 1.357;
+      letter-spacing: 0.06em;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+    }
+
+    @media (min-width: 768px) {
+      .button-card-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    .button-card-subtitle {
+      margin-top: 3px;
+      word-break: break-all;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: 'M PLUS 1p', sans-serif;
+      font-weight: 800;
+    }
+
+    /* ======== フッター ======== */
+    .footer {
+      text-align: center;
+      padding: 16px 0 8px;
+      font-size: 0.75rem;
+      color: rgba(51, 51, 51, 0.5);
+    }
+
+    .footer a {
+      color: rgba(51, 51, 51, 0.5);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 背景グラデーション -->
+  <div class="bg-fixed"></div>
+
+  <div class="page-container">
+    <main class="main-content">
+
+      <!-- ======== プロフィールセクション ======== -->
+      <section class="profile-section">
+        <div class="profile-top">
+
+          <!-- lit.link ロゴ -->
+          <div class="litlink-logo">
+            <a href="https://lit.link" target="_blank" rel="noreferrer">
+              <span class="litlink-logo-text">lit.link</span>
+            </a>
+          </div>
+
+          <!-- プロフィールアイコン -->
+          <div class="profile-icon-wrapper">
+            <div class="profile-icon-inner">
+              <img
+                alt="profile icon"
+                class="profile-icon"
+                src="images/profile-icon.png"
+                width="240"
+                height="240"
+              >
+            </div>
+          </div>
+
+          <!-- プロフィール名 -->
+          <div class="profile-name-wrapper">
+            <h1 class="profile-name">ゼロから学ぶ解剖学</h1>
+          </div>
+        </div>
+
+        <!-- キャプション -->
+        <p class="profile-caption">画像をタップすると詳細が確認できます！</p>
+      </section>
+
+      <!-- ======== リンクリスト ======== -->
+      <ul class="links-list">
+
+        <!-- 1. 消化器解剖学コース（フル幅バナー） -->
+        <li class="link-item">
+          <a
+            href="https://zero-kaibougaku.my.canva.site/shokushinkaibougaku"
+            target="_blank"
+            rel="noreferrer"
+            class="image-card"
+          >
+            <div class="image-card-img-wrapper">
+              <img
+                src="images/course-shokuki.png"
+                class="image-card-img"
+                alt="消化器解剖学コース"
+              >
+            </div>
+            <div class="image-card-overlay">
+              <div class="image-card-overlay-inner">
+                <div class="image-card-overlay-relative">
+                  <div class="image-card-text-box">
+                    <div class="image-card-text">画像をタップで詳細が見れます！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- 2. 東京開催（ボタン・リンクなし） -->
+        <li class="link-item">
+          <div class="button-card button-card-no-link" aria-label="Button link, no url">
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/seminar-tokyo.png"
+                    class="button-card-thumb-img"
+                    alt="東京　7/8(水) 10:00〜16:00【残り２名】"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">東京　7/8(水) 10:00〜16:00【残り２名】</h2>
+                <div class="button-card-subtitle"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 3. 名古屋開催（ボタン・リンクなし） -->
+        <li class="link-item">
+          <div class="button-card button-card-no-link" aria-label="Button link, no url">
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/seminar-nagoya.png"
+                    class="button-card-thumb-img"
+                    alt="名古屋　7/15(水) 10:00〜16:00【残り2名】"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">名古屋　7/15(水) 10:00〜16:00【残り2名】</h2>
+                <div class="button-card-subtitle"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 4. 大阪開催（ボタン・リンクなし） -->
+        <li class="link-item">
+          <div class="button-card button-card-no-link" aria-label="Button link, no url">
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/seminar-osaka.png"
+                    class="button-card-thumb-img"
+                    alt="大阪　7/16(木) 10:00〜16:00【残り５名】"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">大阪　7/16(木) 10:00〜16:00【残り５名】</h2>
+                <div class="button-card-subtitle"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 5. メンバーシップ（フル幅バナー） -->
+        <li class="link-item">
+          <a
+            href="https://zero-kaibougaku.my.canva.site/membership"
+            target="_blank"
+            rel="noreferrer"
+            class="image-card"
+          >
+            <div class="image-card-img-wrapper">
+              <img
+                src="images/membership.png"
+                class="image-card-img"
+                alt="メンバーシップ"
+              >
+            </div>
+          </a>
+        </li>
+
+        <!-- 6. SNSバナー（フル幅画像・リンクなし） -->
+        <li class="link-item">
+          <div class="image-card image-card-no-link">
+            <div class="image-card-img-wrapper">
+              <img
+                src="images/sns-banner.png"
+                class="image-card-img"
+                alt=""
+              >
+            </div>
+          </div>
+        </li>
+
+        <!-- 7. 公式LINE -->
+        <li class="link-item">
+          <a
+            href="https://lin.ee/xOTW3Ce"
+            target="_blank"
+            rel="noreferrer"
+            class="button-card"
+            aria-label="公式LINE"
+          >
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/line-icon.png"
+                    class="button-card-thumb-img"
+                    alt="最新の勉強会・セミナー・講座のお知らせ・お問い合わせ"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">最新の勉強会・セミナー・講座のお知らせ・お問い合わせ</h2>
+                <div class="button-card-subtitle">公式LINE</div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- 8. YouTube -->
+        <li class="link-item">
+          <a
+            href="https://www.youtube.com/channel/UCVAR4D2UMtPVwEUEZgEs61g?sub_confirmation=1"
+            target="_blank"
+            rel="noreferrer"
+            class="button-card"
+            aria-label="YouTube"
+          >
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/youtube-icon.png"
+                    class="button-card-thumb-img"
+                    alt="ゼロから学ぶ解剖学|ゼロ解剖"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">ゼロから学ぶ解剖学|ゼロ解剖</h2>
+                <div class="button-card-subtitle">動画で学ぶ!!</div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- 9. Instagram①（超入門） -->
+        <li class="link-item">
+          <a
+            href="https://www.instagram.com/zero.kaibougaku/"
+            target="_blank"
+            rel="noreferrer"
+            class="button-card"
+            aria-label="Instagram 超入門"
+          >
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/instagram-nyumon.png"
+                    class="button-card-thumb-img"
+                    alt="ゼロから学ぶ解剖学【超入門】"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">ゼロから学ぶ解剖学【超入門】</h2>
+                <div class="button-card-subtitle">インスタグラム</div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- 10. Instagram②（メイン） -->
+        <li class="link-item">
+          <a
+            href="https://www.instagram.com/zero.kaibougaku_horie/"
+            target="_blank"
+            rel="noreferrer"
+            class="button-card"
+            aria-label="Instagram メイン"
+          >
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/instagram-main.png"
+                    class="button-card-thumb-img"
+                    alt="ゼロから学ぶ解剖学"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">ゼロから学ぶ解剖学</h2>
+                <div class="button-card-subtitle">インスタグラム</div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- 11. Instagram③（にちじょう） -->
+        <li class="link-item">
+          <a
+            href="https://www.instagram.com/zero.kaibougaku_nitizyo/"
+            target="_blank"
+            rel="noreferrer"
+            class="button-card"
+            aria-label="Instagram にちじょう"
+          >
+            <div class="button-card-inner">
+              <div class="button-card-thumb">
+                <div class="button-card-thumb-img-wrapper">
+                  <img
+                    src="images/instagram-nichijyo.png"
+                    class="button-card-thumb-img"
+                    alt="ゼロから学ぶ解剖学|にちじょう"
+                    width="112"
+                    height="112"
+                  >
+                </div>
+              </div>
+              <div class="button-card-text">
+                <h2 class="button-card-title">ゼロから学ぶ解剖学|にちじょう</h2>
+                <div class="button-card-subtitle">日常・裏側を発信！９割ふざけてます。笑</div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <a href="https://lit.link" target="_blank" rel="noreferrer">Created by lit.link</a>
+      ©︎lit.link All Rights Reserved
+    </footer>
+  </div>
+
+</body>
+</html>
