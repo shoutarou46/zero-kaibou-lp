@@ -27,13 +27,119 @@
       width: 100%;
       max-width: 960px;
       margin: 0 auto;
-      display: block;
+      position: relative;
+      overflow: hidden;
+      min-height: clamp(200px, 42vw, 380px);
+      background: #0d1b6e;
     }
 
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .hero-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 62%;
+      height: 100%;
+      background-image: url('images/course-shokuki.png');
+      background-size: auto 100%;
+      background-position: right center;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 72%;
+      height: 100%;
+      background: linear-gradient(90deg, #0d1b6e 0%, #0d1b6e 48%, rgba(13,27,110,0) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(20px, 4.5vw, 52px) clamp(16px, 3.5vw, 44px);
+      max-width: 56%;
+    }
+
+    .hero-tagline {
+      font-size: clamp(10px, 1.8vw, 14px);
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-title {
+      font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+      font-size: clamp(20px, 4.2vw, 44px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      padding: 2px 12px;
+      letter-spacing: 0.3em;
+      margin-top: 6px;
+      font-size: 0.82em;
+    }
+
+    .hero-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hero-features li {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 40px;
+      padding: 5px 12px;
+      font-size: clamp(9px, 1.6vw, 12px);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(11px, 2vw, 15px);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 580px) {
+      .hero {
+        min-height: 0;
+      }
+      .hero-bg {
+        width: 100%;
+        opacity: 0.2;
+      }
+      .hero-overlay {
+        width: 100%;
+        background: rgba(13, 27, 110, 0.88);
+      }
+      .hero-content {
+        max-width: 100%;
+        padding: 28px 20px 32px;
+        text-align: center;
+      }
+      .hero-features {
+        align-items: center;
+      }
     }
 
     /* ========== CTA SECTION ========== */
@@ -740,9 +846,20 @@
 <body>
 
   <!-- ========== HERO ========== -->
-  <div class="hero">
-    <img src="images/course-shokuki.png" alt="触診解剖学 リアル講座 上半身 - なんとなくを根拠に変える解剖学">
-  </div>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline">なんとなくを根拠に変える解剖学</p>
+      <h1 class="hero-title">触診解剖学<br>リアル講座<br><span class="hero-badge">上半身</span></h1>
+      <ul class="hero-features">
+        <li>🤲 実際に触れて体感できる！</li>
+        <li>📖 基礎からわかりやすく学べる！</li>
+        <li>💡 現場ですぐに活かせる！</li>
+      </ul>
+      <p class="hero-sub">骨・筋肉・動きの"つながり"がわかれば、<br>あなたのアプローチはもっと変わる。</p>
+    </div>
+  </section>
 
   <!-- ========== CTA SECTION ========== -->
   <section class="cta-section">
@@ -877,18 +994,247 @@
         <img src="images/canva_img_14.png" alt="太もも・お尻" style="height:180px; width:100%; object-fit:cover;">
         <div class="pain-card-label">「<span class="hl">太ももやお尻</span>を引き締めたい」</div>
       </div>
+      <div class="pain-card" style="display:flex; align-items:center; justify-content:center;">
+        <div class="pain-card-label" style="text-align:center; padding:24px 16px;">「<span class="hl">反り腰</span>を改善したい」</div>
+      </div>
+      <div class="pain-card" style="display:flex; align-items:center; justify-content:center;">
+        <div class="pain-card-label" style="text-align:center; padding:24px 16px;">「体の<span class="hl">可動域</span>をあげたい」</div>
+      </div>
+    </div>
+
+    <div style="max-width:800px; margin:32px auto 0; text-align:center; padding:32px 24px; background:linear-gradient(135deg,#f3e8ff,#fce4ec); border-radius:20px;">
+      <p style="font-size:clamp(14px,3vw,19px); font-weight:700; color:#555; margin-bottom:8px;">そんな時、あなたは</p>
+      <p style="font-size:clamp(26px,6vw,44px); font-weight:900; color:#1a1a4e; line-height:1.3;">何を<span style="color:#e8215a;">基準</span>に<br>体を見ていますか？</p>
     </div>
   </section>
 
-  <!-- ========== INFOGRAPHIC SECTIONS ========== -->
-  <section style="background:#f8f4ff; padding:0;">
-    <img src="images/canva_img_15.png" alt="解剖学でアプローチが変わる" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  <!-- ========== それがわかると（アプローチが変わる） ========== -->
+  <section style="background:#f8f4ff; padding:48px 24px;">
+    <div style="max-width:800px; margin:0 auto;">
+
+      <p style="font-weight:900; font-size:clamp(17px,3.5vw,22px); color:#1a1a4e; text-align:center; margin-bottom:20px;">それがわかると、</p>
+
+      <div style="display:flex; flex-direction:column; gap:10px; max-width:480px; margin:0 auto 28px;">
+        <div style="background:#fff; border-radius:40px; padding:12px 22px; display:flex; align-items:center; gap:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <span style="font-size:20px; flex-shrink:0;">🤸</span>
+          <p style="font-weight:900; font-size:clamp(14px,2.8vw,18px); color:#e8215a; margin:0;"><strong>ストレッチ</strong>の意味も</p>
+        </div>
+        <div style="background:#fff; border-radius:40px; padding:12px 22px; display:flex; align-items:center; gap:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <span style="font-size:20px; flex-shrink:0;">🏋️</span>
+          <p style="font-weight:900; font-size:clamp(14px,2.8vw,18px); color:#e8215a; margin:0;"><strong>トレーニング</strong>の目的も</p>
+        </div>
+        <div style="background:#fff; border-radius:40px; padding:12px 22px; display:flex; align-items:center; gap:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <span style="font-size:20px; flex-shrink:0;">📋</span>
+          <p style="font-weight:900; font-size:clamp(14px,2.8vw,18px); color:#e8215a; margin:0;"><strong>評価</strong>の視点も</p>
+        </div>
+        <div style="background:#fff; border-radius:40px; padding:12px 22px; display:flex; align-items:center; gap:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <span style="font-size:20px; flex-shrink:0;">💬</span>
+          <p style="font-weight:900; font-size:clamp(14px,2.8vw,18px); color:#e8215a; margin:0;"><strong>お客様への説明</strong>も</p>
+        </div>
+      </div>
+
+      <p style="font-size:clamp(26px,6vw,42px); font-weight:900; color:#1a1a4e; text-align:center; margin-bottom:40px;">変わってきます。</p>
+
+      <p style="font-size:clamp(13px,2.3vw,16px); font-weight:700; color:#8b7ec8; margin-bottom:4px;">例えば</p>
+      <h2 style="font-size:clamp(20px,4.5vw,30px); font-weight:900; color:#1a1a4e; margin-bottom:20px;"><strong>肩が上がりにくい人</strong>に対して…</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px;">
+        <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <div style="background:#e8215a; color:#fff; border-radius:4px; padding:5px 12px; font-size:clamp(11px,2vw,13px); font-weight:900; display:inline-block; margin-bottom:12px;">表面的な見方</div>
+          <p style="font-size:clamp(13px,2.5vw,16px); font-weight:900; color:#e8215a; margin-bottom:10px;">「肩が硬いですね」だけで終わる</p>
+          <p style="font-size:clamp(11px,2vw,13px); color:#666; line-height:1.6; font-weight:700;">原因がわからず、<br>その場しのぎの対応になってしまう…</p>
+        </div>
+        <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 2px 10px rgba(0,0,0,0.07); border:2px solid #8b7ec8;">
+          <div style="background:#8b7ec8; color:#fff; border-radius:4px; padding:5px 12px; font-size:clamp(11px,2vw,13px); font-weight:900; display:inline-block; margin-bottom:12px;">解剖学を理解していると</div>
+          <p style="font-size:clamp(11px,2vw,13px); color:#333; font-weight:700; margin-bottom:10px; line-height:1.7;">肩甲骨の動き、胸郭の動き、上腕骨の位置、ローテーターカフの働きまで考えられる</p>
+          <ul style="list-style:none; padding:0; font-size:clamp(10px,1.8vw,12px); color:#8b7ec8; font-weight:700; margin-bottom:10px;">
+            <li>・上腕骨の位置</li>
+            <li>・胸郭の動き</li>
+            <li>・肩甲骨の動き</li>
+            <li>・ローテーターカフの働き</li>
+          </ul>
+          <p style="font-size:clamp(12px,2.2vw,14px); color:#e8215a; font-weight:900; line-height:1.5;">根本原因を見抜き、<br>最適なアプローチができる！</p>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#fce4ec,#f3e8ff); border-radius:20px; padding:24px 28px; text-align:center; margin-bottom:32px;">
+        <p style="font-size:clamp(17px,3.8vw,24px); font-weight:900; color:#1a1a4e;">
+          この違いが <span style="color:#e8215a;">現場での対応力</span>に大きくつながります。
+        </p>
+      </div>
+
+      <div style="text-align:center; margin-bottom:24px;">
+        <div style="background:#8b7ec8; color:#fff; border-radius:40px; padding:12px 26px; display:inline-block; font-size:clamp(14px,2.8vw,18px); font-weight:900; margin-bottom:14px;">基礎解剖学を学ぶことで、</div>
+        <p style="font-size:clamp(20px,4.5vw,32px); font-weight:900; color:#1a1a4e; line-height:1.6;">
+          体を<span style="color:#e8215a; text-decoration:underline; text-decoration-color:#ffd966; -webkit-text-decoration-color:#ffd966;">"部分"</span>ではなく<br>
+          <span style="color:#e8215a;">"つながり"</span>で見られるようになります。
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+        <div style="background:#fff; border-radius:12px; padding:16px 12px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:20px; font-weight:900; margin-bottom:6px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.5;">根本原因を見抜き、<br>効果的な指導ができる！</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px 12px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:20px; font-weight:900; margin-bottom:6px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.5;">お客様の納得感・信頼感が<br>ぐっと高まる！</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px 12px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:20px; font-weight:900; margin-bottom:6px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.5;">ケガの予防や再発防止にも<br>つながる！</p>
+        </div>
+      </div>
+
+    </div>
   </section>
-  <section style="background:#fff5f8; padding:0;">
-    <img src="images/canva_img_16.png" alt="腰痛の場合も同じ" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  <!-- ========== 腰痛の場合も同じ ========== -->
+  <section style="background:#fff5f8; padding:48px 24px;">
+    <div style="max-width:800px; margin:0 auto;">
+
+      <h2 style="font-size:clamp(20px,4.5vw,32px); font-weight:900; color:#1a1a4e; margin-bottom:10px; line-height:1.4;">
+        また、<span style="color:#e8215a;">腰痛</span>の場合も同じです。
+      </h2>
+      <p style="font-size:clamp(17px,3.8vw,26px); font-weight:900; color:#1a1a4e; margin-bottom:28px; line-height:1.5;">
+        腰が痛いからといって、<br>
+        <span style="color:#e8215a; text-decoration:underline; text-decoration-color:#ffd966; -webkit-text-decoration-color:#ffd966;">腰だけを見ればいい</span>のでしょうか？
+      </p>
+
+      <div style="background:linear-gradient(135deg,#e8d5f5,#d0c4f0); border-radius:12px; padding:16px 20px; text-align:center; margin-bottom:24px;">
+        <p style="font-size:clamp(13px,2.8vw,17px); font-weight:900; color:#1a1a4e;">腰痛の背景には、さまざまな要因が関係している可能性があります。</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:32px;">
+        <div style="background:#fff; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:16px; font-weight:900; margin-bottom:8px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.7;"><strong>ハムストリングスが硬くなると</strong>骨盤は後ろに<span style="color:#e8215a;">引っ張られやすく</span>なります。</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:16px; font-weight:900; margin-bottom:8px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.7;"><strong>腸腰筋が硬くなると</strong>骨盤が前に引っ張られ、腰が<span style="color:#e8215a;">反りやすくなる</span>こともあります。</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="color:#e8215a; font-size:16px; font-weight:900; margin-bottom:8px;">✓</p>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#333; line-height:1.7;"><strong>股関節がうまく動かなければ</strong>、腰が代わりに動いてしまい<span style="color:#e8215a;">負担が増える</span>こともあります。</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-bottom:28px;">
+        <p style="font-size:clamp(15px,3.2vw,20px); font-weight:900; color:#1a1a4e; margin-bottom:6px;">つまり、痛みや不調が出ている場所だけが</p>
+        <p style="font-size:clamp(18px,4vw,26px); font-weight:900; color:#e8215a; text-decoration:underline; text-underline-offset:4px; text-decoration-color:#ffd966; -webkit-text-decoration-color:#ffd966;">原因とは限りません。</p>
+      </div>
+
+      <div style="background:linear-gradient(135deg,#f3e8ff,#e8d5f5); border-radius:20px; padding:24px 28px; text-align:center; margin-bottom:28px;">
+        <p style="font-size:clamp(17px,3.8vw,24px); font-weight:900; color:#1a1a4e;">
+          だからこそ、<span style="color:#e8215a;">骨や筋肉の基礎</span>を学ぶことが大切です。
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+        <div style="background:#fff; border-radius:12px; padding:18px 14px; box-shadow:0 2px 10px rgba(0,0,0,0.07); text-align:center;">
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#8b7ec8; line-height:1.6;">筋肉の名前を<br>ただ覚えるためでは<br>ありません。</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:18px 14px; box-shadow:0 2px 10px rgba(0,0,0,0.07); text-align:center;">
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:700; color:#8b7ec8; line-height:1.6;">起始・停止を<br>丸暗記するためだけでも<br>ありません。</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:18px 14px; box-shadow:0 2px 10px rgba(0,0,0,0.07); text-align:center; border:2px solid #e8215a;">
+          <p style="font-size:clamp(11px,2vw,14px); font-weight:900; color:#e8215a; line-height:1.7;">大切なのは、その筋肉がどこにあり、どの骨についていて、どんな動きに関わっているのかを<strong>理解すること。</strong></p>
+        </div>
+      </div>
+
+    </div>
   </section>
-  <section style="background:#f3e8ff; padding:0;">
-    <img src="images/canva_img_17.png" alt="解剖学は土台" style="width:100%;max-width:960px;display:block;margin:0 auto;">
+  <!-- ========== 解剖学は土台 ========== -->
+  <section style="background:#f3e8ff; padding:48px 24px;">
+    <div style="max-width:800px; margin:0 auto;">
+
+      <h2 style="font-size:clamp(19px,4.2vw,28px); font-weight:900; color:#1a1a4e; margin-bottom:8px; line-height:1.5;">
+        解剖学は、<span style="color:#e8215a; text-decoration:underline; text-decoration-style:wavy; text-decoration-color:#e8215a;">難しい言葉を覚えるためのもの</span><br>ではありません。
+      </h2>
+      <p style="font-size:clamp(16px,3.5vw,22px); font-weight:900; color:#1a1a4e; margin-bottom:32px; line-height:1.7;">
+        現場で体を見て、考えて、伝えて、<br>
+        結果につなげるための<span style="text-decoration:underline; text-decoration-color:#ffd966; -webkit-text-decoration-color:#ffd966;">土台</span>です。
+      </p>
+
+      <div style="background:linear-gradient(135deg,#d0c4f0,#e8d5f5); border-radius:14px; padding:16px 20px; text-align:center; margin-bottom:28px;">
+        <p style="font-size:clamp(15px,3.2vw,20px); font-weight:900; color:#1a1a4e;">骨・筋肉の<span style="color:#e8215a;">基礎解剖学</span>は、様々な学びの土台になります。</p>
+      </div>
+
+      <!-- 5つのメリット -->
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-bottom:32px;">
+        <div style="background:#fff; border-radius:12px; padding:12px 6px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="font-size:clamp(10px,1.8vw,13px); font-weight:900; color:#e8215a; margin-bottom:4px;">評価力UP</p>
+          <p style="font-size:clamp(9px,1.5vw,11px); font-weight:700; color:#555; line-height:1.5;">原因を見抜く力が身につく</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:12px 6px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="font-size:clamp(10px,1.8vw,13px); font-weight:900; color:#e8215a; margin-bottom:4px;">指導力UP</p>
+          <p style="font-size:clamp(9px,1.5vw,11px); font-weight:700; color:#555; line-height:1.5;">根拠を持って分かりやすく伝えられる</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:12px 6px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="font-size:clamp(10px,1.8vw,13px); font-weight:900; color:#8b7ec8; margin-bottom:4px;">アプローチの幅が広がる</p>
+          <p style="font-size:clamp(9px,1.5vw,11px); font-weight:700; color:#555; line-height:1.5;">多角的な視点で対応できる</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:12px 6px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="font-size:clamp(10px,1.8vw,13px); font-weight:900; color:#8b7ec8; margin-bottom:4px;">結果につながる</p>
+          <p style="font-size:clamp(9px,1.5vw,11px); font-weight:700; color:#555; line-height:1.5;">的確なアプローチで効果が出やすい</p>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:12px 6px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <p style="font-size:clamp(10px,1.8vw,13px); font-weight:900; color:#8b7ec8; margin-bottom:4px;">信頼につながる</p>
+          <p style="font-size:clamp(9px,1.5vw,11px); font-weight:700; color:#555; line-height:1.5;">説明できることでお客様も安心</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-bottom:28px; padding:0 8px;">
+        <p style="font-size:clamp(14px,3vw,19px); font-weight:900; color:#1a1a4e; line-height:1.6; margin-bottom:6px;">感覚だけに頼るのではなく、知識だけで終わるのでもなく、</p>
+        <p style="font-size:clamp(17px,3.8vw,24px); font-weight:900; color:#e8215a; line-height:1.5;">目の前の体をより深く理解するために。</p>
+      </div>
+
+      <!-- なぜ3つ -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:32px;">
+        <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <div style="background:#f3e8ff; padding:14px 12px; text-align:center; border-bottom:1px solid #e8d5f5;">
+            <p style="font-size:clamp(11px,2.2vw,14px); font-weight:900; color:#8b7ec8; line-height:1.5;">なぜこの動きが<br>できないのか？</p>
+          </div>
+          <div style="padding:14px 12px; text-align:center;">
+            <p style="font-size:clamp(10px,1.8vw,12px); font-weight:700; color:#555; line-height:1.6;">構造や機能を理解することで、<span style="color:#e8215a; font-weight:900;">本当の原因</span>が見えてくる</p>
+          </div>
+        </div>
+        <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <div style="background:#f3e8ff; padding:14px 12px; text-align:center; border-bottom:1px solid #e8d5f5;">
+            <p style="font-size:clamp(11px,2.2vw,14px); font-weight:900; color:#8b7ec8; line-height:1.5;">なぜこのアプローチが<br>必要なのか？</p>
+          </div>
+          <div style="padding:14px 12px; text-align:center;">
+            <p style="font-size:clamp(10px,1.8vw,12px); font-weight:700; color:#555; line-height:1.6;">理由を説明できるから、<span style="color:#e8215a; font-weight:900;">納得して</span>取り組める</p>
+          </div>
+        </div>
+        <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+          <div style="background:#f3e8ff; padding:14px 12px; text-align:center; border-bottom:1px solid #e8d5f5;">
+            <p style="font-size:clamp(11px,2.2vw,14px); font-weight:900; color:#8b7ec8; line-height:1.5;">なぜこの筋肉に<br>負担がかかるのか？</p>
+          </div>
+          <div style="padding:14px 12px; text-align:center;">
+            <p style="font-size:clamp(10px,1.8vw,12px); font-weight:700; color:#555; line-height:1.6;">筋肉のつながりを理解すると、<span style="color:#e8215a; font-weight:900;">効果的な改善</span>につながる</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- まずは骨と筋肉の基礎から -->
+      <div style="background:linear-gradient(135deg,#fce4ec,#f3e8ff); border-radius:20px; padding:28px 24px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <img src="images/canva_img_21.png" alt="" aria-hidden="true" style="width:60px; height:60px; object-fit:contain; flex-shrink:0;">
+        <div style="flex:1; min-width:180px;">
+          <p style="font-size:clamp(15px,3.2vw,20px); font-weight:900; color:#1a1a4e; line-height:1.6; margin-bottom:4px;">まずは骨と筋肉の基礎から学ぶこと。</p>
+          <p style="font-size:clamp(15px,3.2vw,20px); font-weight:900; color:#1a1a4e; line-height:1.6;">それが、現場で使える解剖学への</p>
+          <p style="font-size:clamp(26px,5.5vw,40px); font-weight:900; color:#e8215a; line-height:1.2;">第一歩です。</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:6px; flex-shrink:0;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="color:#e8215a; font-weight:900; font-size:16px;">✓</span><span style="font-size:clamp(12px,2.2vw,14px); font-weight:700; color:#333;">見える</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="color:#e8215a; font-weight:900; font-size:16px;">✓</span><span style="font-size:clamp(12px,2.2vw,14px); font-weight:700; color:#333;">理解できる</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="color:#e8215a; font-weight:900; font-size:16px;">✓</span><span style="font-size:clamp(12px,2.2vw,14px); font-weight:700; color:#333;">伝えられる</span></div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="color:#e8215a; font-weight:900; font-size:16px;">✓</span><span style="font-size:clamp(12px,2.2vw,14px); font-weight:700; color:#333;">結果が出る</span></div>
+          <p style="font-size:clamp(11px,2vw,13px); font-weight:900; color:#8b7ec8; margin-top:4px;">この土台がすべてを変えます！</p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- ========== NANTONA SECTION ========== -->
